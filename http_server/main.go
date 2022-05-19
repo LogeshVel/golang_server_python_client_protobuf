@@ -12,6 +12,7 @@ import (
 
 // Handles the root page requests.
 func rootPage(w http.ResponseWriter, req *http.Request) {
+	fmt.Println("\nHitted rootPage")
 	r := &echo.RootPage{
 		Status: "Success",
 		Msg:    "Welcome to the root page of the Echo Server",
@@ -20,7 +21,7 @@ func rootPage(w http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Fatal("Errored while Marshaling")
 	}
-	fmt.Println(req.Header)
+	fmt.Printf("Request Headers : %v\n", req.Header)
 	fmt.Printf("Response Bytes : %v\n", responseByte)
 	w.Write(responseByte)
 }
@@ -28,7 +29,7 @@ func rootPage(w http.ResponseWriter, req *http.Request) {
 // Handles the echo page requests. Only the GET request will get the status success
 // other request will get the status failed
 func echoPage(w http.ResponseWriter, request *http.Request) {
-
+	fmt.Println("\nHitted echoPage")
 	var (
 		echoMethod      echo.HttpMethods
 		responseStatus  string
