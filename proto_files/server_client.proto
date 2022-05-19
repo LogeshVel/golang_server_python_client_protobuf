@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "httpserver/golang/protobuf";
+
+enum HttpMethods{
+    HTTP_METHOD_UNSPECIFIED = 0;
+    HTTP_METHOD_GET = 1;
+    HTTP_METHOD_POST = 2;
+    HTTP_METHOD_PUT = 3;
+    HTTP_METHOD_DELETE = 4;
+}
+
+message RootPage{
+    string status = 1;
+    string msg = 2;
+}
+
+message QueryParameter{
+    map<string, string> query_params = 1;
+}
+
+message EchoResponse{
+    string status = 1;
+    string status_desc = 2;
+    HttpMethods echo_http_method = 3;
+    map<string, string> echo_http_headers = 4;
+    string echo_payload = 5;
+    QueryParameter echo_query_params = 6;
+}
