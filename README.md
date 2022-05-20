@@ -4,7 +4,7 @@
 
 Main outcome of this repo is to use the Protocol Buffers (Protobuf) in the REST API.
 
-The HTTP Server is written in Golang and the HTTP Client is our Python. This two communicates using Protobuf.(Atleast the Server will always response with the Protobuf message serialized to bytes)
+The HTTP Server is written in Golang and the HTTP Client is our Python. This two communicates using Protobuf.(Atleast the Server will always respond with the Protobuf message serialized to bytes)
 
 The Client which receivers the bytes then Deserialize to the Protobuf message.
 
@@ -30,6 +30,16 @@ Folder Structure
                 
 ```
 
+Details of the Files and Folders:
+
+  - http_client - contains the Python HTTP client file and also the compiled proto file output in the pb_files folders
+
+  - http_server - contains the Golang HTTP server file
+
+  - proto_files - has the proto files
+
+  - src - directory for the Golang PB file compiled by protoc
+
 Prerequisites:
 
   - protoc installed
@@ -52,7 +62,7 @@ Usage:
       go run main.go
     ```
     
-  - Now, the HTTP server is up and running in the **localhost:8090**. This URL have been provided to the Python Client file. To run the client, navigate to the _http_client_ folder and execute
+  - Now, the HTTP server is up and running in the **localhost:8090**. This URL has been provided to the Python Client file. To run the client, navigate to the _http_client_ folder and execute
 
     ```
       python client.py

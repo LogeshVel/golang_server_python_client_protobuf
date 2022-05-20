@@ -101,6 +101,6 @@ func main() {
 	http.HandleFunc("/", rootPage)
 	http.HandleFunc("/echo", echoPage)
 
-	http.ListenAndServe(":8090", nil)
+	log.Fatal(http.ListenAndServe(":8090", nil))
 
 }

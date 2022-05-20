@@ -1,6 +1,5 @@
 from pb_files import server_client_pb2 as pb_client
 import requests
-from google.protobuf.text_format import Parse, MessageToBytes
 
 def request_n_parse_response(request_url, request_method, pb_obj, query_param = None, payload=None):
     """
